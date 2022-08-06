@@ -10,9 +10,6 @@ except ImportError:
 HOST, PORT = os.getenv("HOST", ""), os.getenv("PORT", 80)
 
 
-def send_http_request():
-
-
 def main():
     listen_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     listen_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
