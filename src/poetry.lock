@@ -1,0 +1,19 @@
+[[package]]
+name = "http-parser"
+version = "0.9.0"
+description = "http request/response parser"
+category = "main"
+optional = false
+python-versions = "*"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.10"
+content-hash = "23da2c44faeaa3659dd2d53a1ef7a7118d349fa3382c23a2bb94d7a18fcc73a8"
+
+[metadata.files]
+http-parser = [
+    {file = "http-parser-0.9.0.tar.gz", hash = "sha256:441d3a57c6227230f98aa97539da006fda0f8f4880bc4c5cd895ff2138a52621"},
+    {file = "http_parser-0.9.0-cp37-cp37m-macosx_10_15_x86_64.whl", hash = "sha256:fc025894367cff34fcfc7386980b146b9498e9324cf3dc8992b39609e6158401"},
+    {file = "http_parser-0.9.0-py3.7-macosx-10.15-x86_64.egg", hash = "sha256:779f6666c32e831f755bf8c410df8a0d5a498b374506bfe0e74d5b3def746de3"},
+]
