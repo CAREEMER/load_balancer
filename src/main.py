@@ -7,7 +7,35 @@ except ImportError:
     from http_parser.pyparser import HttpParser
 
 
-HOST, PORT = os.getenv("HOST", ""), os.getenv("PORT", 80)
+def get_upstream_info_from_env():
+    upstream_db = {
+        "web.localhost": {
+            "pool": ["localhost:8081", "localhost:8082", "localhost:8083"]
+        },
+
+        "default": {
+            "pool": ["localhost:8081", "localhost:8082", "localhost:8083"]
+        }
+    }
+
+    counter = 0
+    while 1:
+        upstream = os.environ.get(f"UPSTREAM-{counter}", None)
+        if not upstream:
+            break
+
+        """
+        Upstream is a:
+        {"domain": "app.localhost", "pool": ["host_1:port_1", "host_2:port_2", "host_3:port_3"], "default": 1}
+        """
+
+        counter += 1
+
+    return upstream_db
+
+
+HOST, PORT = os.environ.get("HOST", ""), os.environ.get("PORT", 80)
+UPSTREAMS = get_upstream_info_from_env()
 
 
 def main():
